@@ -30,6 +30,19 @@ RewriteRule ^eee/?(.*)$ /bbb/proxy.php?dst=http://www.ccc.com/eee/$1 [L]
 Here all accesses to `http://www.aaa.com/eee/*` are redirected to `http://www.ccc.com/eee/*`.
 
 
+
+Customization
+-------------
+
+If your frontend server requires an HTTP proxy to access the backend server, you can uncomment the following part in `proxy.php` to modify the default parameter for `stream_get_contents()`.
+
+```php:proxy.php
+stream_context_set_default();
+
+```
+
+
+
 Limitations
 -----------
 
