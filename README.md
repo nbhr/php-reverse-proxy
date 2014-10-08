@@ -28,3 +28,10 @@ By using Apache `mod_rewrite`, you can map a directory of the backend server to 
 RewriteRule ^eee/?(.*)$ /bbb/proxy.php?dst=http://www.ccc.com/eee/$1 [L]
 ```
 Here all accesses to `http://www.aaa.com/eee/*` are redirected to `http://www.ccc.com/eee/*`.
+
+
+Limitations
+-----------
+
+To keep the script as simple as possible, this code supports GET access without query strings only. That is, this DOES NOT support GET parameters such as `&foo=bar` and POST method.
+
