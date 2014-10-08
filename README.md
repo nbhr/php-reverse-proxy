@@ -42,6 +42,7 @@ Customization
 If your frontend server requires an HTTP proxy to access the backend server, you can uncomment the following part in `proxy.php` to modify the default parameter for `stream_get_contents()`.
 
 ```php:proxy.php
+/* # 0. Configure the proxy */
 /*
 stream_context_set_default(
         array("http" => array(
