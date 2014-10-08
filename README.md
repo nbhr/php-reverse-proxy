@@ -12,10 +12,16 @@ While reverse proxy can be implemented as a server (nginx, squid, etc) or a serv
 For such end users, this implements a reverse proxy as a PHP script.
 
 
+License
+-------
+
+This script is licensed under the Apache License. `Cache_Lite` in `lib/` is a part of PEAR.
+
+
 Installation
 ------------
 
-Simply upload `proxy.php` and `lib/` directory to your web site.
+Simply upload `proxy.php` and `lib/` directory to your web site. If you do not need caching mechanism, use `proxy-simple.php` instead. `proxy-simple.php` does not require files in `lib/`.
 
 
 Usage
@@ -30,7 +36,6 @@ RewriteRule ^eee/?(.*)$ /bbb/proxy.php?dst=http://www.ccc.com/eee/$1 [L]
 Here all accesses to `http://www.aaa.com/eee/*` are redirected to `http://www.ccc.com/eee/*`.
 
 
-
 Customization
 -------------
 
@@ -43,9 +48,8 @@ stream_context_set_default();
 ```
 
 
-
 Limitations
 -----------
 
-To keep the script as simple as possible, this code supports GET access without query strings only. That is, this DOES NOT support GET parameters such as `&foo=bar` and POST method.
+To keep the script as simple as possible, this code supports GET access without query strings only. That is, GET parameters such as `&foo=bar` and POST method are not supported.
 
