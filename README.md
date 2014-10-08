@@ -42,13 +42,15 @@ Customization
 If your frontend server requires an HTTP proxy to access the backend server, you can uncomment the following part in `proxy.php` to modify the default parameter for `stream_get_contents()`.
 
 ```php:proxy.php
+/*
 stream_context_set_default(
         array("http" => array(
-                        "proxy" => "tcp://proxy.kuins.net:8080",
+                        "proxy" => "tcp://your.proxy.com:8080",
                         "request_fulluri" => TRUE,
                         ),
         )
 );
+*/
 ```
 
 Limitations
