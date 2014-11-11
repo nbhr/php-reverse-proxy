@@ -56,6 +56,10 @@ if($headers) {
 }
 header("X-Timestamp-Remote: $ts_remote");
 
+if( array_key_exists('Content-Type', $headers) ) {
+	header("Content-Type: " . $headers['Content-Type']);
+}
+
 
 /* 4. Init the cache */
 $options = array(
