@@ -32,13 +32,19 @@ if( FALSE == isset($_GET["dst"]) ) {
 }
 $url = $_GET["dst"];
 
+$params = [];
+foreach ($_GET as $key => $value){
+	if($key == "dst") continue;
+	array_push($params, $key.'='.$value);
+}
+
+$url .= '?' . join('&',$params);
 
 /* 2. Add http:// to URL */
 if(strpos($url, "http://") === 0 || strpos($url, "https://") === 0) {
 } else {
 	$url = "http://" . $url;
 }
-
 
 /* 3. Check the timestamp */
 $headers = get_headers($url, 1);
