@@ -57,5 +57,6 @@ stream_context_set_default(
 Limitations
 -----------
 
-To keep the script as simple as possible, this code supports GET access without query strings only. That is, GET parameters such as `&foo=bar` and POST method are not supported.
+To keep the script as simple as possible, all the query strings are all proxied, as they are to the destination.
 
+So the call `http://www.aaa.com/bbb/proxy.php?bbb=444&dst=http://www.ccc.com/ddd.html&aaa=333` becames `http://www.ccc.com/ddd.html?bbb=444&aaa=333`
