@@ -19,6 +19,10 @@ This script is licensed under the Apache License 2.0. Please note that `Cache_Li
 
 Modify the line of `$url = "http://www.example.com/";` to your target host, and then upload `proxy.php` and `lib/` directory to your web site. If you do not need caching mechanism, use `proxy-simple.php` instead. `proxy-simple.php` does not require files in `lib/`.
 
+```php
+/* Hard-coded target host */
+$url = "http://www.example.com/";
+```
 
 ## Usage
 
