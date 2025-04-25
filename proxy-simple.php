@@ -77,6 +77,10 @@ if( FALSE === $ret ) {
         error("Cannot get $url .");
 }
 
+/* 7. Set response_header to received header */ 
+foreach ($http_response_header as $header) {
+	header($header);
+}
 
 /* 8. Show */
 echo $ret;
